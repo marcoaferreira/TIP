@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TIP</string>
+    <string name="tv_title">TIP calculator</string>
+    <string name="tv_subtitle">Preencha os campos abaixo para calcular a gorjeta da sua conta:</string>
+    <string name="til_totalHint">Digite o valor total da conta</string>
+    <string name="til_personNumber_hint">Digite o total de pessoas</string>
+    <string name="btn_clean">Limpar</string>
+    <string name="btn_calculate">Calcular</string>
 </resources>
