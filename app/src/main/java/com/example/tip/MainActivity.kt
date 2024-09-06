@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tip.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,14 +43,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnCalculate.setOnClickListener {
-            val totalTable: Float = binding.tieTotal.text.toString().toFloat()
-            val nPeople: Float = binding.tiePersonNumber.text.toString().toFloat()
+            val totalTableTemp = binding.tieTotal.text
+            val nPeopleTemp  = binding.tiePersonNumber.text
 
-            val totalTemp = totalTable / nPeople
-            val tip = totalTable * percentage / 100
-            val totalPerPerson = totalTemp + tip
-            println("marco: $totalPerPerson")
+            if(totalTableTemp?.isEmpty() == true || nPeopleTemp?.isEmpty() == true) {
+                Snackbar
+                    .make(binding.tieTotal, "Preencha todos os campos", Snackbar.LENGTH_LONG)
+                    .show()
+            } else {
+                val totalTable: Float = totalTableTemp.toString().toFloat()
+                val nPeople: Float = nPeopleTemp.toString().toFloat()
+
+                val totalTemp = totalTable / nPeople
+                val tip = totalTable * percentage / 100
+                val totalPerPerson = totalTemp + tip
+                println("marco: $totalPerPerson")
+                binding.tvResult.text = "Total individual com gorjeta: R$ ${totalPerPerson.toString()}"
+            }
         }
-
     }
 }
