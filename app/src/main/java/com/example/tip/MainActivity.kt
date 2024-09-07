@@ -1,5 +1,6 @@
 package com.example.tip
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -75,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnCalculate.setOnClickListener {
             val totalTableTemp = binding.tieTotal.text
 
-            if(totalTableTemp?.isEmpty() == true) {
+            if (totalTableTemp?.isEmpty() == true) {
                 Snackbar
                     .make(binding.tieTotal, "Preencha todos os campos", Snackbar.LENGTH_LONG)
                     .show()
@@ -86,17 +87,27 @@ class MainActivity : AppCompatActivity() {
                 val totalTemp = totalTable / nPeople
                 val tip = totalTemp * percentage / 100
                 val totalPerPerson = totalTemp + tip
-                println("marco: $totalPerPerson")
-                binding.tvResult.text = "Total individual com gorjeta: R$ ${totalPerPerson.toString()}"
-            }
 
-            binding.btnClean.setOnClickListener {
-                binding.tvResult.text = ""
-                binding.tieTotal.setText("")
-                binding.rbOptionOne.isChecked = false
-                binding.rbOptionTwo.isChecked = false
-                binding.rbOptionThree.isChecked = false
+                val intent = Intent(this, SummaryActivity::class.java)
+                intent.apply {
+                    putExtra("totalTable", totalTable)
+                    putExtra("nPeople", nPeople)
+                    putExtra("percentage", percentage)
+                    putExtra("totalAmount", totalPerPerson)
+                }
+                clean()
+                startActivity(intent)
             }
         }
+        binding.btnClean.setOnClickListener {
+            clean()
+        }
+    }
+    private fun clean(){
+        binding.tieTotal.setText("")
+        binding.rbOptionOne.isChecked = false
+        binding.rbOptionTwo.isChecked = false
+        binding.rbOptionThree.isChecked = false
+
     }
 }
