@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/tv_Title"
+        style="@style/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Summary"
-        android:textSize="32sp"
+        android:text="@string/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,7 +21,7 @@
         android:id="@+id/tv_SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Veja abaixo o resumo da sua conta"
+        android:text="@string/subtitle"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/tv_Title"
         app:layout_constraintTop_toBottomOf="@+id/tv_Title" />
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Valor total: "
+        android:text="@string/total"
         app:layout_constraintStart_toStartOf="@+id/tv_SubTitle"
         app:layout_constraintTop_toBottomOf="@+id/tv_SubTitle" />
 
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Número de pessoas:  "
+        android:text="@string/n_people"
         app:layout_constraintStart_toStartOf="@+id/tv_total_table_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_total_table_label" />
 
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Percentual:   "
+        android:text="@string/percentage"
         app:layout_constraintStart_toStartOf="@+id/tv_total_people_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_total_people_label" />
 
@@ -96,7 +96,7 @@
         android:id="@+id/tv_total_amount_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total por pessoa: "
+        android:text="@string/total_per_person"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/tv_percentage_label"
         app:layout_constraintTop_toBottomOf="@+id/separator" />
@@ -106,9 +106,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        tools:text="R$ 44,00"
+        tools:text="44.00"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:maxLength="5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_total_amount_label" />
 
@@ -117,7 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Refazer a conta"
+        android:text="@string/refresh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -1,23 +1,20 @@
 <resources>
-    <string name="app_name">TIP</string>
-    <string name="tv_title">TIP calculator</string>
-    <string name="tv_subtitle">Preencha os campos abaixo para calcular a gorjeta da sua conta:</string>
-    <string name="til_totalHint">Digite o valor total da conta</string>
-    <string name="til_personNumber_hint">Digite o total de pessoas</string>
-    <string name="btn_clean">Limpar</string>
-    <string name="btn_calculate">Calcular</string>
-
-    <string-array name="num_people">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-    </string-array>
+    <string name="app_name" translatable="false">TIP</string>
+    <string name="title">Summary</string>
+    <string name="subtitle">Account summary below</string>
+    <string name="total">Order Total:</string>
+    <string name="n_people">Guests:</string>
+    <string name="percentage">Gratuity:</string>
+    <string name="total_per_person">Total per guest:</string>
+    <string name="tip_calculator">TIP calculator</string>
+    <string name="main_subtitle">Fill in the fields below to calculate the gratuity on your bill:</string>
+    <string name="main_total">Order total:</string>
+    <string name="main_n_people">Guests:</string>
+    <string name="main_percentage">Gratuity:</string>
+    <string name="refresh">Refresh</string>
+    <string name="clean">Clean</string>
+    <string name="calculate">Calculate</string>
+    <string name="total_hint">$ 250.00</string>
+    <string name="guests_hint">5</string>
+    <string name="gratuity_hint">10%</string>
 </resources>
