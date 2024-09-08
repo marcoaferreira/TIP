@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Resumo</string>
+    <string name="subtitle">Veja abaixo o resumo da sua conta</string>
+    <string name="total">Valor total:</string>
+    <string name="n_people">Número de pessoas:</string>
+    <string name="percentage">Percentual:</string>
+    <string name="total_per_person">Total por pessoa:</string>
+    <string name="tip_calculator">Calculatora de Gorjeta</string>
+    <string name="main_subtitle">Preencha os campos abaixo para calcular a gorjeta da sua conta:</string>
+    <string name="main_total">Digite o valor da conta:</string>
+    <string name="main_n_people">Digite a quantidade de pessoas:</string>
+    <string name="main_percentage">Percentual da gorjeta:</string>
+    <string name="refresh">Refazer a conta</string>
+    <string name="clean">Limpar</string>
+    <string name="calculate">Calcular</string>
+    <string name="total_hint">R$ 250.00</string>
+    <string name="guests_hint">5</string>
+    <string name="gratuity_hint">10%</string>
+</resources>

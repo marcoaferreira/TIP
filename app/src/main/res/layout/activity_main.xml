@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/tv_title"
+        style="@style/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/tv_title"
-        android:textSize="32sp"
+        android:text="@string/tip_calculator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,100 +23,145 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/tv_subtitle"
+        android:text="@string/main_subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_hint_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/main_total"
+        app:layout_constraintStart_toStartOf="@+id/tv_subtitle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_total">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tie_total"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:hint="@string/total_hint"
             android:inputType="numberDecimal"
-            android:hint="@string/til_totalHint" />
+            android:paddingStart="0dp"
+            android:textSize="24dp"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Spinner
-        android:id="@+id/spinner_personNumber"
+    <TextView
+        android:id="@+id/tv_hint_nPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_n_people"
+        app:layout_constraintStart_toStartOf="@+id/til_total"
+        app:layout_constraintTop_toBottomOf="@+id/til_total" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_totalPeople"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_total"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_nPeople">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_totalPeople"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/guests_hint"
+            android:inputType="number"
+            android:maxLength="2"
+            android:paddingStart="0dp"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <RadioGroup
-        android:id="@+id/rg_percentage"
+    <TextView
+        android:id="@+id/tv_hint_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_percentage"
+        app:layout_constraintStart_toStartOf="@+id/til_totalPeople"
+        app:layout_constraintTop_toBottomOf="@+id/til_totalPeople" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_percentage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_personNumber">
+        android:layout_marginEnd="16dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_percentage">
 
-        <RadioButton
-            android:id="@+id/rb_option_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10%"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/gratuity_hint"
+            android:inputType="number"
+            android:maxLength="2"
+            android:paddingStart="0dp"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <RadioButton
-            android:id="@+id/rb_option_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="15%"/>
 
-        <RadioButton
-            android:id="@+id/rb_option_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20%"/>
-
-    </RadioGroup>
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_clean"
+        style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/btn_clean"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_guideline"
+        android:layout_marginBottom="16dp"
+        android:text="@string/clean"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_guideline"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/btn_guideline"
-        android:orientation="vertical"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:layout_constraintGuide_percent="0.5"/>
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <Button
         android:id="@+id/btn_calculate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="4dp"
-        android:text="@string/btn_calculate"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/calculate"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btn_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+        app:layout_constraintStart_toStartOf="@+id/btn_guideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
